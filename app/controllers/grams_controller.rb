@@ -29,6 +29,7 @@ end
   end
 
   def index
+    @grams = Gram.all
   end
 
   def show
@@ -43,6 +44,7 @@ end
   end 
 
   def create
+    puts 'shiot'
     @gram = current_user.grams.create(gram_params)
     if @gram.valid?
       redirect_to root_path
@@ -55,7 +57,7 @@ end
   private
 
   def gram_params
-    params.require(:gram).permit(:message)
+    params.require(:gram).permit(:message, :picture)
   end
 
   def render_not_found(status=:not_found)
