@@ -25,6 +25,7 @@
           <%= comment.message %>
         </div>
       <% end %>
+      <br class="clear-fix" />
       <h4>Add a comment</h4>
       <%= simple_form_for Comment.new, url: gram_comments_path(gram) do |f| %>
         <%= f.input :message %>

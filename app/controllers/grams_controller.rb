@@ -44,7 +44,6 @@ end
   end 
 
   def create
-    puts 'shiot'
     @gram = current_user.grams.create(gram_params)
     if @gram.valid?
       redirect_to root_path
